@@ -1,7 +1,7 @@
 {application, skeleton,
  [
   {description,
-   "Whisper Messaging Subsystem v2"},
+   "Erlang Skeleton"},
   {vsn, "0.1"},
   {applications,
     [kernel,stdlib,lager,cowboy]},
