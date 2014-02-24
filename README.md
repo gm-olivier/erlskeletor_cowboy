@@ -1,0 +1,4 @@
+erlang-skeleton
+===============
+
+Erlang skeleton
