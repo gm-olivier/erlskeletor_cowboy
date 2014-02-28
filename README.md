@@ -1,4 +1,4 @@
-erlang-skeleton
+erlang-skeletor
 ===============
 
 Erlang skeleton with a root cowboy handler, common test, rebar and a simple makefile
