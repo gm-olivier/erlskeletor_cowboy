@@ -20,7 +20,6 @@ start(_StartType, _StartArgs) -> skeleton_sup:start_link().
 stop(_State) -> ok.
 
 load_modules() ->
-    Modules =
     [  M
     || {module, M} <-
        [  begin
@@ -31,5 +30,4 @@ load_modules() ->
           end
        || F <- filelib:wildcard("ebin/*.beam")
        ]
-    ],
-    lager:info("loaded modules: ~p", [Modules]).
+    ].

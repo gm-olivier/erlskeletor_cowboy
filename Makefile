@@ -1,28 +1,8 @@
-NODE ?= skeleton
-REBAR ?= "./rebar"
-RUN := erl -pa ebin -pa deps/*/ebin -smp enable -s lager -boot start_sasl ${ERL_ARGS}
-CT_ARGS ?= "-v"
+PROJECT = skeleton
 
-all:
-	${REBAR} get-deps compile
+DEPS = cowboy lager jiffy
+dep_cowboy = https://github.com/extend/cowboy.git master
+dep_lager = https://github.com/basho/lager.git master
+dep_jiffy = https://github.com/davisp/jiffy.git master
 
-quick:
-	${REBAR} skip_deps=true compile
-
-clean:
-	${REBAR} clean
-
-quick_clean:
-	${REBAR} skip_deps=true clean
-
-run: quick
-	if [ -n "${NODE}" ]; then ${RUN} -name ${NODE}@`hostname` -s skeleton; \
-	else ${RUN} -s skeleton; \
-	fi
-
-xref:
-	${REBAR} skip_deps=true --verbose compile xref
-
-tests:
-	mkdir -p log/ct
-	${REBAR} skip_deps=true compile ct ${CT_ARGS}
+include erlang.mk
