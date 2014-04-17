@@ -11,9 +11,9 @@ To download dependencies and compile everything:
 make
 ```
  
-To download dependencies, compile everything and run the application:
+To compile everything and run the application:
 ```bash
-make run ERL_ARGS='-config config/skeleton.config'
+erl -pa ebin -pa deps/*/ebin -smp enable -s lager -boot start_sasl -s skeleton -config config/skeleton.config
 ```
 
 To run tests:
