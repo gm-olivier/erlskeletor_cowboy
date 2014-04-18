@@ -3,7 +3,7 @@
   {description,
    "Erlang Erlskeletor"},
   {vsn, "0.1"},
-  {registered, [registered_sup]},
+  {registered, []},
   {modules, []},
   {applications,
     [kernel,stdlib,lager,cowboy,jiffy]},
