@@ -3,6 +3,8 @@
   {description,
    "Erlang Skeleton"},
   {vsn, "0.1"},
+  {registered, [registered_sup]},
+  {modules, []},
   {applications,
     [kernel,stdlib,lager,cowboy]},
   {mod, {skeleton, []}}
