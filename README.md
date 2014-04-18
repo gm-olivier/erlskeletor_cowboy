@@ -1,7 +1,7 @@
 erlskeletor
 ===============
 
-Erlang erlskeletor with a root cowboy handler, common test, rebar and a simple makefile
+Erlang erlskeletor with a root cowboy handler, common test, erlang.mk and relx
 
 ![](https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/fc0f50ca1bd995498d9ddf28c95b8fe5/tumblr_mr9nrvPZ1R1s46h7vo1_1280.jpg)
 ---
@@ -11,13 +11,9 @@ To download dependencies and compile everything:
 make
 ```
  
-To compile everything and run the application:
+To run interactively the release
 ```bash
-erl -pa ebin -pa deps/*/ebin -smp enable -s lager -boot start_sasl -s erlskeletor -config config/erlskeletor.config
+_rel/bin/erlskeletor console 
 ```
 
-To run tests:
-```bash
-make tests
-```
 
