@@ -1,12 +1,12 @@
-{application, skeleton,
+{application, erlskeletor,
  [
   {description,
-   "Erlang Skeleton"},
+   "Erlang Erlskeletor"},
   {vsn, "0.1"},
   {registered, [registered_sup]},
   {modules, []},
   {applications,
     [kernel,stdlib,lager,cowboy,jiffy]},
-  {mod, {skeleton, []}}
+  {mod, {erlskeletor, []}}
  ]
 }.

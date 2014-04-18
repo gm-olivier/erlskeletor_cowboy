@@ -19,8 +19,8 @@ all() ->
 
 init_per_suite(Config) ->
     ibrowse:start(),
-    skeleton:start(),
-    {ok, Port} = application:get_env(skeleton, http_port),
+    erlskeletor:start(),
+    {ok, Port} = application:get_env(erlskeletor, http_port),
     Url = "http://localhost:" ++ integer_to_list(Port),
     [ {url, Url} | Config ].
 
@@ -30,5 +30,5 @@ application_should_be_started(Config) ->
     "200" = StatusCode.
 
 end_per_suite(_Config) ->
-    skeleton:stop(),
+    erlskeletor:stop(),
     ibrowse:stop().

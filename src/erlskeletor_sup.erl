@@ -1,4 +1,4 @@
--module(skeleton_sup).
+-module(erlskeletor_sup).
 -author('federico.carrone@inakanetworks.net').
 
 -behaviour(supervisor).
@@ -10,14 +10,14 @@
 start_link() -> supervisor:start_link({local, ?MODULE}, ?MODULE, {}).
 
 start_listeners() ->
-  {ok, Port} = application:get_env(skeleton, http_port),
-  {ok, ListenerCount} = application:get_env(skeleton, http_listener_count),
+  {ok, Port} = application:get_env(erlskeletor, http_port),
+  {ok, ListenerCount} = application:get_env(erlskeletor, http_listener_count),
 
   Dispatch =
     cowboy_router:compile(
       [ {'_',
           [
-            {<<"/">>, skeleton_root_handler, []}
+            {<<"/">>, erlskeletor_root_handler, []}
           ]
         }
       ]),
@@ -31,13 +31,13 @@ start_listeners() ->
     , {timeout,   12000}
     ],
 
-  cowboy:start_http(skeleton_http, ListenerCount, RanchOptions, CowboyOptions).
+  cowboy:start_http(erlskeletor_http, ListenerCount, RanchOptions, CowboyOptions).
 
 %% behaviour callbacks
 init({}) ->
   {ok, { {one_for_one, 5, 10},
     [ 
       %{ChildId, StartFunc, Restart, Shutdown, Type, Modules}.
-      {skeleton_http, {skeleton_sup, start_listeners, []}, permanent, 1000, worker, [skeleton_sup]}
+      {erlskeletor_http, {erlskeletor_sup, start_listeners, []}, permanent, 1000, worker, [erlskeletor_sup]}
     ]}
   }.

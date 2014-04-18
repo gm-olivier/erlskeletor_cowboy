@@ -1,4 +1,4 @@
-PROJECT = skeleton
+PROJECT = erlskeletor
 
 DEPS = cowboy lager jiffy ibrowse eper
 dep_cowboy = https://github.com/extend/cowboy.git master

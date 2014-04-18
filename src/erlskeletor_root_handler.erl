@@ -1,5 +1,5 @@
 %% @doc Handler for / endpoints
--module(skeleton_root_handler).
+-module(erlskeletor_root_handler).
 
 -export(
   [
@@ -30,5 +30,5 @@ is_authorized(Req, State) ->
 %% internal
 handle_get(Req, State) ->
     Body = jiffy:encode({[{<<"status">>, <<"ok">>}]}),
-    lager:info("hola"),
+    lager:info("holas"),
     {Body, Req, State}.
