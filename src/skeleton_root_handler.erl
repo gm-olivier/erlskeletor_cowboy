@@ -30,4 +30,5 @@ is_authorized(Req, State) ->
 %% internal
 handle_get(Req, State) ->
     Body = jiffy:encode({[{<<"status">>, <<"ok">>}]}),
+    lager:info("hola"),
     {Body, Req, State}.
