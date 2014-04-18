@@ -16,4 +16,7 @@ To run interactively the release
 _rel/bin/erlskeletor console 
 ```
 
+#Resources
 
+- [Why I use erlang.mk instead of rebar](https://medium.com/p/708597c0dd08)
+- [Erlang Factory 2014 -- Keynote Catalyse Change](http://youtu.be/Djv4C9H9yz4)
