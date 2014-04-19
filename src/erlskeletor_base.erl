@@ -2,17 +2,18 @@
 -module(erlskeletor_base).
 
 -export(
-  [
-   init/3,
-   allowed_methods/2,
-   content_types_provided/2,
-   is_authorized/2
-  ]).
+   [
+    init/3,
+    allowed_methods/2,
+    content_types_provided/2,
+    is_authorized/2
+   ]).
 
 -export(
-  [
+   [
     handle_get/2
-  ]).
+   ]
+  ).
 
 %% cowboy
 init(_Transport, _Req, _Opts) ->

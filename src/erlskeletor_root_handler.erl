@@ -1,5 +1,12 @@
 -module(erlskeletor_root_handler).
 -include_lib("mixer/include/mixer.hrl").
+
+-export(
+   [
+    handle_get/2
+   ]
+  ).
+
 -mixin([{erlskeletor_base,
          [
           init/3,
@@ -8,12 +15,6 @@
           is_authorized/2
          ]
         }]).
-
--export(
-   [
-    handle_get/2
-   ]
-).
 
 handle_get(Req, State) ->
     Body = jiffy:encode({[{<<"foo">>, <<"foo">>}]}),
