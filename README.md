@@ -21,3 +21,4 @@ _rel/bin/erlskeletor console
 
 - [Why I use erlang.mk instead of rebar](https://medium.com/p/708597c0dd08)
 - [Erlang Factory 2014 -- Keynote Catalyse Change](http://youtu.be/Djv4C9H9yz4)
+- [Build Tools - Make, no more](http://hadihariri.com/2014/04/21/build-make-no-more/)
