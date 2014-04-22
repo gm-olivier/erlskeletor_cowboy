@@ -17,5 +17,5 @@
         }]).
 
 handle_get(Req, State) ->
-    Body = jiffy:encode({[{<<"foo">>, <<"foo">>}]}),
+    Body = jiffy:encode({[{<<"hello">>, <<"world">>}]}),
     {Body, Req, State}.
