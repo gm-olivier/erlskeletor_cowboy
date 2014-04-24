@@ -11,7 +11,7 @@ To download dependencies and compile everything:
 ```bash
 make
 ```
-To run the erlang shell and launch everything
+To run the erlang shell and launch everything:
 ```bash
 make shell
 ```
@@ -24,7 +24,7 @@ At the erlang shell you will see the following messages when sync recompiles you
 18:55:07.150 [info] erlskeletor_root_handler: Reloaded! (Beam changed.)
 ```
 
-To execute the [release](http://www.erlang.org/doc/design_principles/release_structure.html#id75723) recompile with make and call _rel/bin/erlskeletor console 
+To execute the [release](http://www.erlang.org/doc/design_principles/release_structure.html#id75723) recompile with make and call _rel/bin/erlskeletor console:
 ```bash
 make
 _rel/bin/erlskeletor console 
