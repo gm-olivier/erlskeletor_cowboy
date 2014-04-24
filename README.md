@@ -16,39 +16,17 @@ To run the erlang shell and launch everything
 make shell
 ```
 
-To have your changes autocompiled, purged and loaded run sync:go() at the erlang shell
+The changes you do to the source code are autocompiled, purged and loaded when while you are developing and using make shell thanks to [sync](https://github.com/rustyio/sync). [The -s sync flag in this line from the Makefile](https://github.com/pyotrgalois/erlskeletor/blob/master/Makefile#L-16) is responsible for starting sync. Remove it if you don't like it.
+
+At the erlang shell you will see the following messages when sync recompiles your code:
 ```bash
-(erlskeletor@localhost)1> sync:go().
-Scanning source files...
-ok
-(erlskeletor@localhost)2> 14:12:55.374 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/error_logger_lager_h.erl:0: Recompiled.
-14:12:55.464 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager.erl:0: Recompiled.
-14:12:55.511 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_app.erl:0: Recompiled.
-14:12:55.532 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_backend_throttle.erl:0: Recompiled.
-14:12:55.552 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_config.erl:0: Recompiled.
-14:12:55.595 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_console_backend.erl:0: Recompiled.
-14:12:55.667 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_crash_log.erl:0: Recompiled.
-14:12:55.699 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_default_formatter.erl:0: Recompiled.
-14:12:55.842 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_file_backend.erl:0: Recompiled.
-14:12:55.882 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_handler_watcher.erl:0: Recompiled.
-14:12:55.950 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_transform.erl:0: Recompiled.
-14:12:56.086 [info] /home/pyotrgalois/projects/erlskeletor/deps/lager/src/lager_util.erl:0: Recompiled.
-14:12:56.089 [info] error_logger_lager_h: Reloaded! (Beam changed.)
-14:12:56.090 [info] lager: Reloaded! (Beam changed.)
-14:12:56.091 [info] lager_app: Reloaded! (Beam changed.)
-14:12:56.092 [info] lager_backend_throttle: Reloaded! (Beam changed.)
-14:12:56.093 [info] lager_config: Reloaded! (Beam changed.)
-14:12:56.094 [info] lager_console_backend: Reloaded! (Beam changed.)
-14:12:56.095 [info] lager_crash_log: Reloaded! (Beam changed.)
-14:12:56.095 [info] lager_default_formatter: Reloaded! (Beam changed.)
-14:12:56.097 [info] lager_file_backend: Reloaded! (Beam changed.)
-14:12:56.098 [info] lager_handler_watcher: Reloaded! (Beam changed.)
-14:12:56.100 [info] lager_util: Reloaded! (Beam changed.)
+(erlskeletor@pyotrgaloiss-MacBook-Air.local)2> 18:55:07.143 [info] /Users/pyotrgalois/projects/erlskeletor/src/erlskeletor_root_handler.erl:0: Recompiled.
+18:55:07.150 [info] erlskeletor_root_handler: Reloaded! (Beam changed.)
 ```
 
- 
-To execute the [release](http://www.erlang.org/doc/design_principles/release_structure.html#id75723)
+To execute the [release](http://www.erlang.org/doc/design_principles/release_structure.html#id75723) recompile with make and call _rel/bin/erlskeletor console 
 ```bash
+make
 _rel/bin/erlskeletor console 
 ```
 
