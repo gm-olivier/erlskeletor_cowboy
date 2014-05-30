@@ -14,21 +14,26 @@ start_listeners() ->
   {ok, ListenerCount} = application:get_env(erlskeletor, http_listener_count),
 
   Dispatch =
-    cowboy_router:compile(
-      [ {'_',
-          [
-            {<<"/">>, erlskeletor_root_handler, []}
-          ]
-        }
-      ]),
-
+    cowboy_router:compile([
+                           {
+                             '_',
+                             [
+                              {<<"/">>, erlskeletor_root_handler, []}
+                             ]
+                           }
+                          ]),
+    
   RanchOptions =
-    [ {port, Port}
+    [ 
+      {port, Port}
     ],
   CowboyOptions =
-    [ {env,       [{dispatch, Dispatch}]}
-    , {compress,  true}
-    , {timeout,   12000}
+    [ 
+      {env, [
+             {dispatch, Dispatch}
+            ]},
+      {compress,  true},
+      {timeout,   12000}
     ],
 
   cowboy:start_http(erlskeletor_http, ListenerCount, RanchOptions, CowboyOptions).

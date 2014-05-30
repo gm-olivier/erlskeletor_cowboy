@@ -1,12 +1,17 @@
-{application, erlskeletor,
- [
-  {description,
-   "Erlang Erlskeletor"},
-  {vsn, "0.1"},
-  {registered, []},
-  {modules, []},
-  {applications,
-    [kernel,stdlib,lager,cowboy,jiffy]},
-  {mod, {erlskeletor, []}}
- ]
+{
+  application,
+  erlskeletor,
+  [
+   {description,
+     "Erlang Erlskeletor"},
+   {vsn, "0.1"},
+   {registered, []},
+   {modules, []},
+   {applications,
+    [kernel,stdlib,lager,cowboy,jiffy]
+   },
+   {mod,
+    {erlskeletor, []}
+   }
+  ]
 }.
