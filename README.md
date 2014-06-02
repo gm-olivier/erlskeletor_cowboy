@@ -16,7 +16,7 @@ To run the erlang shell and launch everything:
 make shell
 ```
 
-The root handler answers with an html that will create an [EventSource](http://www.html5rocks.com/en/tutorials/eventsource/basics/) to to receive server sent events. Open your browser and go to [/](http://localhost:8080). The messages will get appended to the DOM. 
+The root handler answers with an html that will create an [EventSource](http://www.html5rocks.com/en/tutorials/eventsource/basics/) to receive server sent events. Open your browser and go to [/](http://localhost:8080). The messages will get appended to the DOM. 
 ```bash
 $ curl -X GET "http://localhost:8080/" 
 <html>
