@@ -17,7 +17,7 @@ allowed_methods(Req, State) ->
     {[<<"GET">>], Req, State}.
 
 content_types_provided(Req, State) ->
-    {[{{<<"text">>, <<"html">>, []}, handle_get}], Req, State}.
+    {[{<<"application/json">>, handle_get}], Req, State}.
 
 is_authorized(Req, State) ->
     {true, Req, State}.

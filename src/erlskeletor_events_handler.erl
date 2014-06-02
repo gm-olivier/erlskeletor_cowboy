@@ -19,7 +19,7 @@ info({message, Msg}, Req, State) ->
     erlang:send_after(1000, self(), {message, human_readable_date()}),
     {loop, Req, State}.
 
-
+% internal
 human_readable_date() ->
     TimeStamp = os:timestamp(),
     {{Year, Month, Day}, {Hour, Minute, Second}} = calendar:now_to_universal_time(TimeStamp),

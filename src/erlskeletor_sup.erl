@@ -24,8 +24,9 @@ start_listeners() ->
                                {
                                  '_',
                                  [
-                                  {<<"/">>, erlskeletor_root_handler, []},
-                                  {<<"/events">>, erlskeletor_events_handler, []}
+                                  {"/", cowboy_static, {file, "src/index.html"}},
+                                  {<<"/events">>, erlskeletor_events_handler, []},
+                                  {<<"/foobar">>, erlskeletor_foobar_handler, []}
                                  ]
                                }
                               ]),
