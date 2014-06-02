@@ -24,7 +24,8 @@ start_listeners() ->
                                {
                                  '_',
                                  [
-                                  {<<"/">>, erlskeletor_root_handler, []}
+                                  {<<"/">>, erlskeletor_root_handler, []},
+                                  {<<"/events">>, erlskeletor_events_handler, []}
                                  ]
                                }
                               ]),
