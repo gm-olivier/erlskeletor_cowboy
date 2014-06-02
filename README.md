@@ -40,7 +40,7 @@ $ curl -X GET "http://localhost:8080/"
 
 You can fetch the messages sent by the server if you send a GET to /events
 ```bash
- curl -X GET "http://localhost:8080/events" 
+$ curl -X GET "http://localhost:8080/events" 
 id: date
 data: 2014-6-2T21:34:56Z
 
@@ -52,7 +52,7 @@ data: 2014-6-2T21:34:57Z
 
 And at last you can GET the /foobar endpoint to receive a foo bar in JSON sauce
 ```bash
-curl -X GET "http://localhost:8080/foobar" 
+$ curl -X GET "http://localhost:8080/foobar" 
 {"foo":"bar"}
 ```
 
