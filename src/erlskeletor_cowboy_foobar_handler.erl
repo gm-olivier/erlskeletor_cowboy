@@ -1,4 +1,4 @@
--module(erlskeletor_foobar_handler).
+-module(erlskeletor_cowboy_foobar_handler).
 -include_lib("mixer/include/mixer.hrl").
 
 -export([
@@ -6,7 +6,7 @@
         ]).
 
 -mixin([
-        {erlskeletor_base,
+        {erlskeletor_cowboy_base,
          [
           init/3,
           allowed_methods/2,

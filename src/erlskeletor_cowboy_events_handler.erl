@@ -1,4 +1,4 @@
--module(erlskeletor_events_handler).
+-module(erlskeletor_cowboy_events_handler).
 -export([
          init/3,
          info/3,

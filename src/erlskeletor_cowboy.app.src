@@ -1,9 +1,9 @@
 {
   application,
-  erlskeletor,
+  erlskeletor_cowboy,
   [
    {description,
-     "Erlang Erlskeletor"},
+     "Erlang Erlskeletor_Cowboy"},
    {vsn, "0.1"},
    {registered, []},
    {modules, []},
@@ -11,7 +11,7 @@
     [kernel,stdlib,lager,cowboy,jiffy]
    },
    {mod,
-    {erlskeletor, []}
+    {erlskeletor_cowboy, []}
    }
   ]
 }.

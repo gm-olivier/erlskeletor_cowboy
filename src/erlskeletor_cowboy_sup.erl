@@ -1,4 +1,4 @@
--module(erlskeletor_sup).
+-module(erlskeletor_cowboy_sup).
 -author('federico.carrone@gmail.com').
 
 -behaviour(supervisor).
@@ -16,8 +16,8 @@ start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, {}).
 
 start_listeners() ->
-    {ok, Port} = application:get_env(erlskeletor, http_port),
-    {ok, ListenerCount} = application:get_env(erlskeletor, http_listener_count),
+    {ok, Port} = application:get_env(erlskeletor_cowboy, http_port),
+    {ok, ListenerCount} = application:get_env(erlskeletor_cowboy, http_listener_count),
     
     Dispatch =
         cowboy_router:compile([
@@ -25,8 +25,8 @@ start_listeners() ->
                                  '_',
                                  [
                                   {"/", cowboy_static, {file, "src/index.html"}},
-                                  {<<"/events">>, erlskeletor_events_handler, []},
-                                  {<<"/foobar">>, erlskeletor_foobar_handler, []}
+                                  {<<"/events">>, erlskeletor_cowboy_events_handler, []},
+                                  {<<"/foobar">>, erlskeletor_cowboy_foobar_handler, []}
                                  ]
                                }
                               ]),
@@ -44,13 +44,13 @@ start_listeners() ->
           {timeout,   12000}
         ],
     
-    cowboy:start_http(erlskeletor_http, ListenerCount, RanchOptions, CowboyOptions).
+    cowboy:start_http(erlskeletor_cowboy_http, ListenerCount, RanchOptions, CowboyOptions).
 
 %% behaviour callbacks
 init({}) ->
     {ok, { {one_for_one, 5, 10},
            [ 
              %{ChildId, StartFunc, Restart, Shutdown, Type, Modules}
-             {erlskeletor_http, {erlskeletor_sup, start_listeners, []}, permanent, 1000, worker, [erlskeletor_sup]}
+             {erlskeletor_cowboy_http, {erlskeletor_cowboy_sup, start_listeners, []}, permanent, 1000, worker, [erlskeletor_cowboy_sup]}
            ]}
     }.

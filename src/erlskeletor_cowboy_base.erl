@@ -1,5 +1,5 @@
 %% @doc Handler for / endpoints
--module(erlskeletor_base).
+-module(erlskeletor_cowboy_base).
 
 -export(
    [

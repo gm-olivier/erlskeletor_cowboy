@@ -19,8 +19,8 @@ all() ->
 
 init_per_suite(Config) ->
     ibrowse:start(),
-    erlskeletor:start(),
-    {ok, Port} = application:get_env(erlskeletor, http_port),
+    erlskeletor_cowboy:start(),
+    {ok, Port} = application:get_env(erlskeletor_cowboy, http_port),
     Url = "http://localhost:" ++ integer_to_list(Port),
     [ {url, Url} | Config ].
 
@@ -30,5 +30,5 @@ application_should_be_started(Config) ->
     "200" = StatusCode.
 
 end_per_suite(_Config) ->
-    erlskeletor:stop(),
+    erlskeletor_cowboy:stop(),
     ibrowse:stop().
