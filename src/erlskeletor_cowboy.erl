@@ -1,5 +1,6 @@
 -module(erlskeletor_cowboy).
 -author('federico.carrone@inakanetworks.net').
+-behaviour(application).
 
 -export([start/0, start/2, stop/0, stop/1]).
 
