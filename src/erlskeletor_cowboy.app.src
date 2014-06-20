@@ -8,7 +8,7 @@
    {registered, []},
    {modules, []},
    {applications,
-    [kernel,stdlib,lager,cowboy,jiffy]
+    [kernel,stdlib,lager,cowboy,jiffy, ssl, ibrowse]
    },
    {mod,
     {erlskeletor_cowboy, []}
